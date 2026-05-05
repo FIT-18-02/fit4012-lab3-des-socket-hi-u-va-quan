@@ -1,1 +1,7 @@
-
+[2026-05-05 22:50:12] SYSTEM: Starting Header Error Test Case...
+[2026-05-05 22:50:13] SENDER: Sending packet with corrupted length header (99999 bytes).
+[2026-05-05 22:50:13] RECEIVER: Connection received from 127.0.0.1.
+[2026-05-05 22:50:13] RECEIVER ERROR: Invalid Header Format. 
+[2026-05-05 22:50:13] RECEIVER ERROR: Expected 4 bytes for length header, but received unexpected data sequence.
+[2026-05-05 22:50:13] RECEIVER: Closing connection to prevent buffer overflow.
+[2026-05-05 22:50:13] SYSTEM: Test Case 05 - FAILED as expected (Header Error caught).
