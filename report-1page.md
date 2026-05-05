@@ -22,7 +22,7 @@ Nhóm triển khai hệ thống theo mô hình Client-Server.
 - Kiểm thử: Sử dụng pytest để kiểm tra từ mức hàm (unit test) đến mức tích hợp hệ thống (integration test).
 ## Kết quả
 Hệ thống đã vượt qua toàn bộ 6/6 ca kiểm thử tự động, bao gồm các kịch bản quan trọng:
-
+//quanhieu
 - Happy path: Truyền tin và giải mã thành công giữa Sender và Receiver.
 - Tamper data: Phát hiện lỗi và dừng xử lý khi dữ liệu bản mã bị thay đổi trên đường truyền.
 - Wrong key: Đảm bảo không thể giải mã nếu phía nhận sử dụng sai khóa.
