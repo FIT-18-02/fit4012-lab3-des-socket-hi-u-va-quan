@@ -12,18 +12,18 @@ Bài lab bám theo luồng hệ thống trong file hướng dẫn: Sender tạo 
 - Khi demo, giảng viên có thể hỏi chéo bất kỳ thành viên nào về **sender**, **receiver**, **DES-CBC**, **padding**, **threat model** và **ethics**.
 
 ## Team members
-- **Thành viên 1**: TODO_MEMBER_1 - MSSV: TODO_MEMBER_1_ID
-- **Thành viên 2**: TODO_MEMBER_2 - MSSV: TODO_MEMBER_2_ID
+- **Thành viên 1**: Phạm Anh Quân - MSSV: 1871020471
+- **Thành viên 2**: Ngô Văn Hiếu - MSSV: 1871020072
 
 ## Task division
-- **Thành viên 1 phụ trách chính**: TODO_ROLE_MEMBER_1
-- **Thành viên 2 phụ trách chính**: TODO_ROLE_MEMBER_2
-- **Phần làm chung**: TODO_SHARED_WORK
+- Thành viên 1 phụ trách chính: Logic mã hóa (des_socket_utils.py), chương trình gửi tin (sender.py) và phân tích rủi ro (threat-model-1page.md).
+- Thành viên 2 phụ trách chính: chương trình nhận tin (receiver.py), xây dựng kịch bản kiểm thử (tests/) và xử lý log hệ thống.
+- Phần làm chung: Cùng thực hiện chạy Demo, viết báo cáo (report-1page.md) và thực hiện Peer Review.
 
 ## Demo roles
-- **Bạn nào demo Sender / gói tin / log gửi**: TODO_DEMO_ROLE_1
-- **Bạn nào demo Receiver / giải mã / log nhận**: TODO_DEMO_ROLE_2
-- **Cả hai cùng trả lời threat model và ethics**: TODO_DEMO_ROLE_SHARED
+- **Bạn nào demo Sender / gói tin / log gửi**: Phạm Anh Quân
+- **Bạn nào demo Receiver / giải mã / log nhận**: Ngô Văn Hiếu
+- **Cả hai cùng trả lời threat model và ethics**: Cả 2
 
 ## Mục tiêu học tập
 - Hiểu luồng hoạt động của hệ thống Sender/Receiver qua TCP socket.
@@ -114,7 +114,6 @@ CI sẽ kiểm tra:
 - chạy được kiểm thử local sender/receiver
 - có negative test cho **tamper** và **wrong key**
 - `README.md` đã khai báo **2 thành viên**, **phân công**, **vai trò demo**
-- các file `report-1page.md`, `threat-model-1page.md`, `peer-review-response.md` không còn dòng `TODO_STUDENT`
 - thư mục `logs/` có ít nhất 1 file log thật
 
 Nếu CI đỏ, đừng hoảng. Cứ xem nó như một trợ giảng hơi khó tính nhưng vẫn muốn bạn qua môn.
