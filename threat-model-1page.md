@@ -12,7 +12,7 @@
 - Vector khởi tạo (IV): Tham số cần thiết cho chế độ mã hóa DES-CBC để đảm bảo tính ngẫu nhiên.
 ## Attacker model
 - Kẻ tấn công đóng vai trò là thực thể đứng giữa đường truyền (Man-in-the-Middle).
-
+//quanhieu
 - Đối tượng có khả năng nghe lén, bắt các gói tin TCP chạy qua mạng nội bộ hoặc Internet.
 
 - Đối tượng có thể can thiệp, chỉnh sửa các bit dữ liệu trong gói tin trước khi nó đến tay người nhận.
