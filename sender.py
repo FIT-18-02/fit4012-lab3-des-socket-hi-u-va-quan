@@ -8,7 +8,7 @@ SERVER_IP = os.getenv('SERVER_IP', '127.0.0.1')
 SERVER_PORT = int(os.getenv('SERVER_PORT', '6000'))
 MESSAGE_ENV = os.getenv('MESSAGE')
 LOG_FILE = os.getenv('SENDER_LOG_FILE', '')
-
+//quanhieu
 def get_message() -> bytes:
     """Lấy bản tin từ biến môi trường hoặc từ bàn phím"""
     if MESSAGE_ENV is not None:
