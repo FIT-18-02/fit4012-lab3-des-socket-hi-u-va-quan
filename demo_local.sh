@@ -1,43 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 1. Cấu hình tham số
+# Lấy Port và Message từ tham số dòng lệnh hoặc dùng mặc định
 PORT="${1:-6001}"
-MESSAGE="${2:-Xin chao FIT4012}"
-HOST="127.0.0.1"
+MESSAGE="${2:-Xin chao FIT4012 - Quan & Hieu}"
 
-echo "=== Đang khởi động demo trên Port: $PORT ==="
+echo "[*] Bat dau chay demo Lab 3 tai Port: $PORT"
 
-# 2. Dọn dẹp nếu cổng đã bị chiếm (Tránh lỗi Address already in use)
-if lsof -Pi :"$PORT" -sTCP:LISTEN -t >/dev/null ; then
-    echo "Cảnh báo: Cổng $PORT đang bận. Đang thử đóng tiến trình cũ..."
-    fuser -k "$PORT/tcp" || true
-    sleep 1
-fi
-
-# 3. Chạy Receiver dưới nền
-echo "1. Đang khởi tạo Receiver..."
-PYTHONUNBUFFERED=1 \
-RECEIVER_HOST="$HOST" \
-RECEIVER_PORT="$PORT" \
-SOCKET_TIMEOUT=10 \
-python receiver.py &
-
+# 1. Chạy Receiver dưới nền (Background)
+# Thêm SENDER_LOG_FILE để CI hoặc script tự lưu log nếu cần
+PYTHONUNBUFFERED=1 RECEIVER_HOST=127.0.0.1 RECEIVER_PORT="$PORT" SOCKET_TIMEOUT=10 python receiver.py &
 receiver_pid=$!
 
-# 4. Kiểm tra xem Receiver đã thực sự lắng nghe chưa thay vì chỉ sleep 1
-echo "2. Đang đợi Receiver sẵn sàng..."
-timeout 5 bash -c "until printf "" > /dev/tcp/$HOST/$PORT; do sleep 0.5; done" 2>/dev/null || \
-{ echo "Lỗi: Receiver không phản hồi sau 5 giây"; kill $receiver_pid; exit 1; }
+# Đợi một chút để Receiver kịp khởi tạo socket
+sleep 2
 
-# 5. Chạy Sender
-echo "3. Đang gửi thông điệp: '$MESSAGE'"
-SERVER_IP="$HOST" \
-SERVER_PORT="$PORT" \
-MESSAGE="$MESSAGE" \
-python sender.py
+# 2. Chạy Sender để gửi tin nhắn
+echo "[*] Sender dang gui tin nhan..."
+SERVER_IP=127.0.0.1 SERVER_PORT="$PORT" MESSAGE="$MESSAGE" python sender.py
 
-# 6. Đợi Receiver hoàn tất và đóng lại
-echo "4. Đang đợi kết thúc tiến trình..."
-wait "$receiver_pid"
-echo "=== Demo hoàn tất thành công ==="
+# 3. Đợi một lát để Receiver xử lý xong rồi đóng Receiver
+sleep 2
+echo "[*] Ket thuc demo, dang dong Receiver (PID: $receiver_pid)..."
+
+# Dung kill thay vi wait de script khong bi treo neu receiver dung vong lap while True
+kill "$receiver_pid" || true
+
+echo "[+] Demo hoan tat ruc ro!"
