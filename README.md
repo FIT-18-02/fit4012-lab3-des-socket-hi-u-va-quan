@@ -4,7 +4,7 @@
 Chào mừng bạn đến với một chiếc lab nhìn thì hiền nhưng rất biết cách “hỏi xoáy đáp xoay”. Ở lab này, bạn sẽ làm một hệ thống nhỏ gồm **Sender** và **Receiver** chạy qua **TCP socket**, trong đó bản tin được mã hoá bằng **DES-CBC**, có **IV**, có **header độ dài**, và có đủ chỗ để bạn luyện cả kỹ năng kỹ thuật lẫn tư duy bảo mật.
 
 Bài lab bám theo luồng hệ thống trong file hướng dẫn: Sender tạo **DES key 8 byte**, **IV 8 byte**, mã hoá bằng **DES-CBC + PKCS#7**, rồi gửi tuần tự **key + IV + length header + ciphertext**; Receiver lắng nghe socket, nhận đúng thứ tự này rồi giải mã và hiển thị lại bản rõ. Đây là mô hình học tập có chủ đích để quan sát quy trình giao tiếp, **không phải thiết kế an toàn để dùng ngoài đời thật**.
-
+//quan
 ## Hình thức làm bài
 - **Làm theo nhóm 2 người**.
 - Hai bạn dùng **1 repo chung**.
