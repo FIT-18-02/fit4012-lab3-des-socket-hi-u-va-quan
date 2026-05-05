@@ -13,7 +13,7 @@ Bài lab bám theo luồng hệ thống trong file hướng dẫn: Sender tạo 
 
 ## Team members
 - **Thành viên 1**: Phạm Anh Quân - MSSV: 1871020471
-- **Thành viên 2**: Ngô Văn Hiếu - MSSV: 1871020072
+- **Thành viên 2**: Ngô Văn Hiếu - MSSV: 1871020234
 
 ## Task division
 - Thành viên 1 phụ trách chính: Logic mã hóa (des_socket_utils.py), chương trình gửi tin (sender.py) và phân tích rủi ro (threat-model-1page.md).
