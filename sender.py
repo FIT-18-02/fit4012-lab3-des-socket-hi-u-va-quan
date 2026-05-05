@@ -30,17 +30,15 @@ def main() -> None:
             s.settimeout(10)
             s.connect((SERVER_IP, SERVER_PORT))
             s.sendall(overall)
-            # DO NOT CHANGE THIS LINE - SYSTEM TESTS REQUIRE IT
+            # Bat buoc phai in dong nay de pass test
             print("[+] Đã gửi bản mã.")
 
+        # Format in ra phai dung tung ky tu de test case tim thay
         lines = [
-            "--- SENDER LOG ---",
-            f"Plaintext: {plain.decode('utf-8', errors='ignore')}",
-            f"Key (hex): {key.hex()}",
-            f"IV (hex):  {iv.hex()}",
-            f"Ciphertext (hex): {cipher_bytes.hex()}",
-            f"Total Packet Size: {len(overall)} bytes",
-            "------------------"
+            f"Key: {key.hex()}",
+            f"IV: {iv.hex()}",
+            f"Ciphertext: {cipher_bytes.hex()}",
+            f"Total Packet Size: {len(overall)} bytes"
         ]
         
         for line in lines:
