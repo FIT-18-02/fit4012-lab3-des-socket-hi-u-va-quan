@@ -5,3 +5,4 @@
 [2026-05-05 22:50:13] RECEIVER ERROR: Expected 4 bytes for length header, but received unexpected data sequence.
 [2026-05-05 22:50:13] RECEIVER: Closing connection to prevent buffer overflow.
 [2026-05-05 22:50:13] SYSTEM: Test Case 05 - FAILED as expected (Header Error caught).
+//QH
